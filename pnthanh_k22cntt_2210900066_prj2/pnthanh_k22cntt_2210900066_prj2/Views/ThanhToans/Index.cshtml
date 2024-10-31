@@ -1,0 +1,51 @@
+﻿@model IEnumerable<pnthanh_k22cntt_2210900066_prj2.Models.ThanhToan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idPhuongThucThanhToan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngayThanhToan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonHang.trangThai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idPhuongThucThanhToan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngayThanhToan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonHang.trangThai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id.ToString() }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id.ToString() }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id.ToString() })
+        </td>
+    </tr>
+}
+
+</table>
